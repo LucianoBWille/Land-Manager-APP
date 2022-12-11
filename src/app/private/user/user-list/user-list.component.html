@@ -1,0 +1,28 @@
+<h3 class="my-4">
+    Users
+    <button class="btn btn-primary" [routerLink]="['new']" routerLinkActive="router-link-active"><i class="fas fa-plus-circle"></i> Novo</button>
+  </h3>
+  
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of apiResponse">
+          <td>
+            <a [routerLink]="[user.id]" routerLinkActive="router-link-active">{{ user.name }}</a>
+          </td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn btn-light" (click)="deleteUser(user.id)"><i class="fas fa-trash"></i> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
