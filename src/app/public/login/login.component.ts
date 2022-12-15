@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { catchError, finalize } from 'rxjs';
+import { User } from 'src/app/private/user/user.model';
 
 interface LoginResponse {
   // token: string;
@@ -74,6 +75,8 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token', JSON.stringify(res));
         this.loginService.currentTokenValue = JSON.stringify(res);
+        localStorage.setItem('user', JSON.stringify(res));
+        this.loginService.currentUserValue = res;
         this.router.navigate(['/app']);
       });
   };

@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserListResponse, SingleUserResponse, User } from './user.model';
+import { User } from './user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SPRING_API } from 'src/app/app.const';
+import { LoginService } from 'src/app/public/login.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private loginService: LoginService) {}
 
   getHttpOptions(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'authorization': this.loginService.currentTokenValue || ''
     });
   }
 
