@@ -65,5 +65,4 @@ export class DeviceService {
   public delete = (id: string): Observable<string> => {
     return this.http.delete<string>(EXPRESS_API + 'devices/' + id, { headers: this.getHttpOptions(),responseType: 'text/plain' as 'json'});
   }
-  
 }

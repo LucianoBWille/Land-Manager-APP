@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import('./device/device.module').then((m) => m.DeviceModule),
   },
   {
+    path: 'measurement',
+    loadChildren: () => import('./measurement/measurement.module').then((m) => m.MeasurementModule),
+  },
+  {
     path: '**', component: PageNotFoundComponent
   },
 ];

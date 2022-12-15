@@ -1,0 +1,26 @@
+<h3 class="my-4">
+    Measutrements
+    <button class="btn btn-primary" [routerLink]="['new']" routerLinkActive="router-link-active"><i class="fas fa-plus-circle"></i> Novo</button>
+</h3>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id do dispositivo</th>
+                <th>Valor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let measurement of apiResponse">
+                <td>
+                    <a [routerLink]="[measurement._id]" routerLinkActive="router-link-active">{{ measurement.deviceId }}</a>
+                </td>
+                <td>{{ measurement.value }}</td>
+                <td>
+                    <button class="btn btn-light" (click)="deleteMeasurement(measurement._id)"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
