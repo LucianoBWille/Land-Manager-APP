@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { catchError, finalize, of } from 'rxjs';
-import { UserListResponse, User } from '../user.model';
+import { User } from '../user.model';
 import { UserService } from '../user.service';
 
 @Component({
@@ -50,6 +50,7 @@ export class UserListComponent implements OnInit {
       )
       .subscribe((res: any) => {
         console.log('resposta =>', res);
+        alert('Usuário deletado com sucesso!');
         this.loadUsers();
       });
   }

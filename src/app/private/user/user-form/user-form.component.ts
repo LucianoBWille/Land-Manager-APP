@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../user.service';
-import { User, SingleUserResponse } from '../user.model';
+import { User } from '../user.model';
 import { catchError, finalize, of } from 'rxjs';
 
 @Component({

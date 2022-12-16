@@ -15,7 +15,7 @@ export class DeviceService {
   getHttpOptions(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Origin': '*',
       // 'Authorization': this.loginService.currentTokenValue || '',
       'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMSJ9.0TiNlxy3KV5dnhkgY9c-N2eBFnCSZ-MCyvbZd64FSLg"
     });

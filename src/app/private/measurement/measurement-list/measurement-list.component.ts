@@ -50,6 +50,7 @@ export class MeasurementListComponent {
       )
       .subscribe((res: any) => {
         console.log('resposta =>', res);
+        alert('Medição deletada com sucesso!');
         this.loadMeasurements("637f784711969418c6398ce0");
       });
   }

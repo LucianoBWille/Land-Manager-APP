@@ -1,9 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from './user.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SPRING_API } from 'src/app/app.const';
 import { LoginService } from 'src/app/public/login.service';
+import { User } from './user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class UserService {
     return new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'authorization': this.loginService.currentTokenValue || ''
+      'Authorization': this.loginService.currentTokenValue || ''
     });
   }
 
@@ -59,6 +59,7 @@ export class UserService {
   };
 
   public delete = (id: string): Observable<string> => {
-    return this.http.delete<string>(SPRING_API + 'users/' + id, { headers: this.getHttpOptions(),responseType: 'text/plain' as 'json'});
+    return this.http.delete<string>(SPRING_API + 'users/' + id,
+    { headers: this.getHttpOptions(),responseType: 'text/plain' as 'json'});
   }
 }

@@ -1,0 +1,24 @@
+<h3 class="my-4">
+  Lands
+  <button class="btn btn-primary" [routerLink]="['new']" routerLinkActive="router-link-active"><i class="fas fa-plus-circle"></i> Novo</button>
+</h3>
+
+<div class="container">
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" placeholder="Fulano de Tal" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+            <label>Poligono do terreno</label>
+            <input type="text" class="form-control" placeholder="Fulano de Tal" formControlName="landPoligonString" />
+        </div>
+
+        <div class="mt-2">
+            <button class="btn btn-success me-1" (click)="saveOrUpdate()" style="min-width: 100px"><i class="fas fa-check-circle"></i> Salvar</button>
+
+            <button class="btn btn-light" [routerLink]="['/app/land']" style="min-width: 100px"><i class="fas fa-times-circle"></i> Cancelar</button>
+        </div>
+    </form>
+</div>

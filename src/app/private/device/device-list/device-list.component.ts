@@ -13,7 +13,7 @@ import { DeviceService } from '../device.service';
 })
 export class DeviceListComponent {
     apiResponse: Device[] | undefined;
-  
+
     constructor(private deviceService: DeviceService ) { }
 
     ngOnInit(): void {
@@ -50,6 +50,7 @@ export class DeviceListComponent {
         )
         .subscribe((res: any) => {
           console.log('resposta =>', res);
+          alert('Dispositivo deletado com sucesso!');
           this.loadDevices();
         });
     }

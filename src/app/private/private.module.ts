@@ -3,6 +3,8 @@ import { PrivateComponent } from './private/private.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { LandFormComponent } from './land/land-form/land-form.component';
+import { LandListComponent } from './land/land-list/land-list.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'land',
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    loadChildren: () => import('./land/land.module').then((m) => m.LandModule),
   },
   {
     path: 'device',
