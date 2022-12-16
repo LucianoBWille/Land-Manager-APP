@@ -1,0 +1,13 @@
+.main {
+    height: 100vh;
+    background: #df3434;
+    background: linear-gradient(to right, rgb(255, 99, 99), rgb(255, 132, 132));
+  }
+  
+  #page-content {  flex: 1 0 auto}
+  
+  #sticky-footer { flex-shrink: none}
+
+  .container {
+    height: 100%;
+  }

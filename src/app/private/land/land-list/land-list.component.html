@@ -1,0 +1,26 @@
+<h3 class="my-4">
+  Lands
+  <button class="btn btn-primary" [routerLink]="['new']" routerLinkActive="router-link-active"><i class="fas fa-plus-circle"></i> Novo</button>
+</h3>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Poligono do terreno</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let land of apiResponse">
+        <td>
+          <a [routerLink]="[land.id]" routerLinkActive="router-link-active">{{ land.name }}</a>
+        </td>
+        <td>{{ land.landPoligonString}}</td>
+        <td>
+          <button class="btn btn-light" (click)="deleteLand(land.id)"><i class="fas fa-trash"></i> Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
